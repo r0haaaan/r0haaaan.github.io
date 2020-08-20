@@ -1,0 +1,31 @@
+<h1>Listing Pods in Kubernetes using Fabric8 Kubernetes Java Client</h1>
+
+Fabric8 Kubernetes Client is one of the most popular Java Client libraries for Kubernetes on the internet. In fact, it's also one of the oldest client libraries after the popular <a href="https://github.com/kubernetes/client-go">client-go</a>
+
+1. Getting <a href="https://github.com/fabric8io/kubernetes-client">Fabric8 Kubernetes Java Client</a>
+You can find Kubernetes Java Client on <a href="https://search.maven.org/search?q=g:io.fabric8%20a:kubernetes-client">maven central</a> as usual. Then you can add it as a dependency in your project. For maven project, you can add it like this:
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;dependency&gt;</span>
+  <span style="color: #008000; font-weight: bold">&lt;groupId&gt;</span>io.fabric8<span style="color: #008000; font-weight: bold">&lt;/groupId&gt;</span>
+  <span style="color: #008000; font-weight: bold">&lt;artifactId&gt;</span>kubernetes-client<span style="color: #008000; font-weight: bold">&lt;/artifactId&gt;</span>
+  <span style="color: #008000; font-weight: bold">&lt;version&gt;</span>4.10.3<span style="color: #008000; font-weight: bold">&lt;/version&gt;</span>
+<span style="color: #008000; font-weight: bold">&lt;/dependency&gt;</span>
+</pre></div>
+
+2. Create a class in your project named ListPods.java and add the following code:
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #AA22FF; font-weight: bold">package</span> io<span style="color: #666666">.</span><span style="color: #BB4444">fabric8</span><span style="color: #666666">;</span>
+
+<span style="color: #AA22FF; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">io.fabric8.kubernetes.api.model.PodList</span><span style="color: #666666">;</span>
+<span style="color: #AA22FF; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">io.fabric8.kubernetes.client.DefaultKubernetesClient</span><span style="color: #666666">;</span>
+<span style="color: #AA22FF; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">io.fabric8.kubernetes.client.KubernetesClient</span><span style="color: #666666">;</span>
+
+<span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">class</span> <span style="color: #0000FF">PodListTest</span> <span style="color: #666666">{</span>
+    <span style="color: #AA22FF; font-weight: bold">public</span> <span style="color: #AA22FF; font-weight: bold">static</span> <span style="color: #00BB00; font-weight: bold">void</span> <span style="color: #00A000">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+        <span style="color: #AA22FF; font-weight: bold">try</span> <span style="color: #666666">(</span>KubernetesClient client <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">new</span> DefaultKubernetesClient<span style="color: #666666">())</span> <span style="color: #666666">{</span>
+            PodList podList <span style="color: #666666">=</span> client<span style="color: #666666">.</span><span style="color: #BB4444">pods</span><span style="color: #666666">().</span><span style="color: #BB4444">inAnyNamespace</span><span style="color: #666666">().</span><span style="color: #BB4444">list</span><span style="color: #666666">();</span>
+            System<span style="color: #666666">.</span><span style="color: #BB4444">out</span><span style="color: #666666">.</span><span style="color: #BB4444">println</span><span style="color: #666666">(</span><span style="color: #BB4444">&quot;Found &quot;</span> <span style="color: #666666">+</span> podList<span style="color: #666666">.</span><span style="color: #BB4444">getItems</span><span style="color: #666666">().</span><span style="color: #BB4444">size</span><span style="color: #666666">()</span> <span style="color: #666666">+</span> <span style="color: #BB4444">&quot; pods.&quot;</span><span style="color: #666666">);</span>
+        <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+3. Run this code. when you run it, you can see the desired output(the number of pods in your namespace). You can find this code in one of my demo projects:  <a href="https://github.com/rohankanojia/kubernetes-client-demo">Kubernetes Client Demo</a>
