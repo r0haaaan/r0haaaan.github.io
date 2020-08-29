@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Rohaan&#39;s Blog</title>
+    <link>https://r0haaaan.github.io/posts/</link>
+    <description>Recent content in Posts on Rohaan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Aug 2020 20:00:36 +0530</lastBuildDate>
+    
+	<atom:link href="https://r0haaaan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Listing Pods in Kubernetes using Fabric8 Kubernetes Java Client</title>
+      <link>https://r0haaaan.github.io/2020/fabric8-kubernetes-client-list-pods/</link>
+      <pubDate>Sat, 29 Aug 2020 20:00:36 +0530</pubDate>
+      
+      <guid>https://r0haaaan.github.io/2020/fabric8-kubernetes-client-list-pods/</guid>
+      <description>Fabric8 Kubernetes Client is one of the most popular Java Client libraries for Kubernetes on the internet. In fact, it&amp;rsquo;s also one of the oldest client libraries after the popular client-go
+Getting Fabric8 Kubernetes Java Client:  You can find Kubernetes Java Client on maven central as usual. Then you can add it as a dependency in your project. For maven project, you can add it like this:  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;io.</description>
+    </item>
+    
+    <item>
+      <title>मेरी पहली पोस्ट</title>
+      <link>https://r0haaaan.github.io/2020/my-first-post/</link>
+      <pubDate>Sat, 29 Aug 2020 20:00:36 +0530</pubDate>
+      
+      <guid>https://r0haaaan.github.io/2020/my-first-post/</guid>
+      <description>यह मेरा पहला पोस्ट है। धन्यवाद।</description>
+    </item>
+    
+  </channel>
+</rss>
